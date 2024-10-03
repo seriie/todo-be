@@ -5,7 +5,6 @@ const authRoutes = require('../routes/auth');
 const userRoutes = require('../routes/user');
 const todoRoutes = require('../routes/todo');
 const cors = require('cors');
-const { createServer } = require('@vercel/node');
 
 const app = express();
 
@@ -26,4 +25,4 @@ app.use('/user', userRoutes);
 app.use('/todos', todoRoutes);
 
 // Export sebagai serverless function untuk Vercel
-module.exports = createServer(app);
+module.exports = app;
