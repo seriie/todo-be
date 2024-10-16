@@ -6,6 +6,7 @@ const userRoutes = require('../routes/user');
 const todoRoutes = require('../routes/todo');
 const cors = require('cors');
 
+
 const app = express();
 
 // Middleware untuk parsing JSON
@@ -24,5 +25,8 @@ app.use('/auth', authRoutes);
 app.use('/user', userRoutes);
 app.use('/todos', todoRoutes);
 
-// Export sebagai serverless function untuk Vercel
-module.exports = app;
+// console.log(authRoutes, userRoutes, todoRoutes);
+
+app.listen(PORT, () => {
+console.log(`server running at http://localhost:${PORT}`);
+});
